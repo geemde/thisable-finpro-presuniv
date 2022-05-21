@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.39" />
+        <entry key="app/src/main/res/drawable/bg_button.xml" value="0.23" />
+        <entry key="app/src/main/res/drawable/bg_google_button.xml" value="0.39" />
+        <entry key="app/src/main/res/drawable/ic_fqa.xml" value="0.29" />
+        <entry key="app/src/main/res/drawable/ic_help.xml" value="0.29" />
+        <entry key="app/src/main/res/drawable/ic_people_illustration_1.xml" value="0.39" />
+        <entry key="app/src/main/res/drawable/ic_people_illustration_2.xml" value="0.39" />
+        <entry key="app/src/main/res/drawable/ic_text_detection.xml" value="0.29" />
+        <entry key="app/src/main/res/drawable/ic_thisable.xml" value="0.39" />
+        <entry key="app/src/main/res/drawable/ic_tulistangan.xml" value="0.29" />
+        <entry key="app/src/main/res/font/nunito_sans_bold.xml" value="0.24791666666666667" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.34782608695652173" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.34739583333333335" />
+        <entry key="app/src/main/res/layout/fragment_homepage.xml" value="0.44641876220703125" />
+        <entry key="app/src/main/res/layout/fragment_ketentuanlayanan.xml" value="0.2427536231884058" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_pendeteksiteks.xml" value="0.34782608695652173" />
+        <entry key="app/src/main/res/layout/fragment_pendeteksitulistangan.xml" value="0.34782608695652173" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.4203190679135533" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.34782608695652173" />
+        <entry key="app/src/main/res/layout/item_layout_banner.xml" value="0.34782608695652173" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.4036458333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

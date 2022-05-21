@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/thisable_navigation"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.gilangmarta.Thisable.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/thisable_navigation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_splashFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment"
+            app:popUpTo="@id/thisable_navigation"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.gilangmarta.Thisable.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_ketentuanLayananFragment"
+            app:destination="@id/ketentuanLayananFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.gilangmarta.Thisable.HomepageFragment"
+        android:label="HomepageFragment"
+        tools:layout="@layout/fragment_homepage">
+        <action
+            android:id="@+id/action_homepageFragment_to_pendeteksiTeksFragment"
+            app:destination="@id/pendeteksiTeksFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_pendeteksiTulisTanganFragment"
+            app:destination="@id/pendeteksiTulisTanganFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ketentuanLayananFragment"
+        android:name="com.gilangmarta.Thisable.KetentuanLayananFragment"
+        android:label="KetentuanLayananFragment"
+        tools:layout="@layout/fragment_ketentuanlayanan"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.gilangmarta.Thisable.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pendeteksiTeksFragment"
+        android:name="com.gilangmarta.Thisable.PendeteksiTeksFragment"
+        android:label="PendeteksiTeksFragment"
+        tools:layout="@layout/fragment_pendeteksiteks"/>
+    <fragment
+        android:id="@+id/pendeteksiTulisTanganFragment"
+        android:name="com.gilangmarta.Thisable.PendeteksiTulisTanganFragment"
+        android:label="PendeteksiTulisTanganFragment"
+        tools:layout="@layout/fragment_pendeteksitulistangan"/>
+
+</navigation>

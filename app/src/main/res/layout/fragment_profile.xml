@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Toolbar
+        android:id="@+id/tb_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:navigationIcon="@drawable/ic_baseline_chevron_left_24"
+        android:title="@string/label_profile"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgProfilePage"
+        android:layout_width="@dimen/dimen_124dp"
+        android:layout_height="@dimen/dimen_124dp"
+        android:layout_marginTop="@dimen/dimen_40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_profile"
+        android:src="@color/colorGrey" />
+
+    <TextView
+        android:id="@+id/tvFullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_name"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        style="@style/TextContent.Header"
+        app:layout_constraintEnd_toEndOf="@+id/imgProfilePage"
+        app:layout_constraintStart_toStartOf="@+id/imgProfilePage"
+        app:layout_constraintTop_toBottomOf="@+id/imgProfilePage" />
+
+    <TextView
+        android:id="@+id/tvFullEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_email"
+        style="@style/TextContent.SubTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFullName"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnBantuan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvFullEmail"
+        android:layout_marginHorizontal="@dimen/dimen_16sp"
+        android:layout_marginTop="@dimen/dimen_40dp"
+        >
+        <ImageView
+            android:id="@+id/imgIconBantuan"
+            android:src="@drawable/ic_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvTitleBantuan"
+            android:text="@string/label_bantuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            style="@style/TextContent.SmallBold"
+            app:layout_constraintTop_toTopOf="@id/imgIconBantuan"
+            app:layout_constraintBottom_toBottomOf="@id/imgIconBantuan"
+            app:layout_constraintStart_toEndOf="@id/imgIconBantuan"/>
+
+        <ImageView
+            android:id="@+id/imgButtonBantuan"
+            android:src="@drawable/ic_chevron_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imgIconBantuan"
+            app:layout_constraintBottom_toBottomOf="@+id/imgIconBantuan" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnTentangThisable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btnBantuan"
+        android:layout_marginHorizontal="@dimen/dimen_16sp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        >
+        <ImageView
+            android:id="@+id/imgIconThisable"
+            android:src="@drawable/ic_thisable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvTitleThisable"
+            android:text="@string/label_tentangThisable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            style="@style/TextContent.SmallBold"
+            app:layout_constraintTop_toTopOf="@id/imgIconThisable"
+            app:layout_constraintBottom_toBottomOf="@id/imgIconThisable"
+            app:layout_constraintStart_toEndOf="@id/imgIconThisable"/>
+
+        <ImageView
+            android:id="@+id/imgButtonThisable"
+            android:src="@drawable/ic_chevron_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imgIconThisable"
+            app:layout_constraintBottom_toBottomOf="@+id/imgIconThisable" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnLogout"
+        style="@style/ButtonContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_40dp"
+        android:layout_marginHorizontal="@dimen/dimen_16dp"
+        android:background="@drawable/bg_button"
+        android:text="@string/action_logout"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/btnTentangThisable" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

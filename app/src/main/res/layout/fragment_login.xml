@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgIllustration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_people_illustration_2"
+        android:layout_marginTop="@dimen/dimen_100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/TextContent.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:text="@string/label_welcome_enablers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgIllustration" />
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:text="@string/label_message_for_enablers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:textAlignment="center"
+        style="@style/TextContent.SubTitle"
+        app:layout_constraintEnd_toEndOf="@+id/imgIllustration"
+        app:layout_constraintStart_toStartOf="@+id/imgIllustration"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <!--  AppCompatButton support icon  -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLoginGoogle"
+        android:text="@string/action_login_with_google"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textStyle="normal"
+        android:elevation="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_16dp"
+        android:paddingHorizontal="@dimen/dimen_32dp"
+        android:background="@drawable/bg_google_button"
+        app:icon="@drawable/google_logo"
+        app:iconTintMode="multiply"
+        app:backgroundTint="@color/blue_1"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle"
+        style="@style/ButtonContent" />
+
+    <LinearLayout
+        android:id="@+id/layoutKetentuanLayanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginGoogle">
+
+        <TextView
+            android:id="@+id/tvKetentuanLayanan"
+            android:text="@string/ketentuan_layanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_4dp"
+            style="@style/TextContent.SmallBoldBlueHyperlink"/>
+
+        <TextView
+            android:id="@+id/tvDoesntHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Thisable"
+            style="@style/TextContent.Small" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "581624492106",
+    "project_id": "thisable-presuniv-finpro",
+    "storage_bucket": "thisable-presuniv-finpro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:581624492106:android:038c270c8d549abd0e76b3",
+        "android_client_info": {
+          "package_name": "com.gilangmarta.Thisable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "581624492106-dskuu0pqlausmtn911fb59mjlsrab6u3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzHRmwdMzJjKJ2Qr3Okd3sRiybF2ogdc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "581624492106-dskuu0pqlausmtn911fb59mjlsrab6u3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
