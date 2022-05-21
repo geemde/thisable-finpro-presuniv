@@ -44,50 +44,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvFullName"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/btnBantuan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvFullEmail"
-        android:layout_marginHorizontal="@dimen/dimen_16sp"
-        android:layout_marginTop="@dimen/dimen_40dp"
-        >
-        <ImageView
-            android:id="@+id/imgIconBantuan"
-            android:src="@drawable/ic_help"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
 
-        <TextView
-            android:id="@+id/tvTitleBantuan"
-            android:text="@string/label_bantuan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimen_16dp"
-            style="@style/TextContent.SmallBold"
-            app:layout_constraintTop_toTopOf="@id/imgIconBantuan"
-            app:layout_constraintBottom_toBottomOf="@id/imgIconBantuan"
-            app:layout_constraintStart_toEndOf="@id/imgIconBantuan"/>
-
-        <ImageView
-            android:id="@+id/imgButtonBantuan"
-            android:src="@drawable/ic_chevron_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/imgIconBantuan"
-            app:layout_constraintBottom_toBottomOf="@+id/imgIconBantuan" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/btnTentangThisable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/btnBantuan"
+        app:layout_constraintTop_toBottomOf="@id/tvFullEmail"
         android:layout_marginHorizontal="@dimen/dimen_16sp"
-        android:layout_marginTop="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/dimen_40dp"
         >
         <ImageView
             android:id="@+id/imgIconThisable"

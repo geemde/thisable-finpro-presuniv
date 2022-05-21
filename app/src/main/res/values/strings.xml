@@ -24,4 +24,5 @@
     <string name="label_hasilTeksTerdeteksi">Hasil belum tersedia.</string>
     <string name="label_ambilUlang">Deteksi Ulang</string>
     <string name="label_hasilTulisTanganTerdeteksi">Hasil belum tersedia.</string>
+    <string name="par_tentangThisable"><b>Thisable</b>\nThisable adalah start-up aplikasi aksesibilitas terpusat pertama di Indonesia. Kami memiliki tujuan untuk menyediakan layanan aplikasi aksesibilitas mobile kepada masyarakat Indonesia, terutama penyandang disabilitas untuk memudahkan difabel dalam berkomunikasi dan menjalani kehidupan sehari-hari.\n\nKami berusaha untuk memecahkan masalah nyata di masyarakat, terutama untuk kenyamanan para penyandang disabilitas untuk berinteraksi. Kami ingin memperjuangkan kesetaraan komunikasi, terlepas dari kekurangan apa yang dimiliki seseorang. Kami juga berencana untuk mengembangkan aplikasi ini menjadi aplikasi super aksesibilitas yang lebih canggih sehingga dapat digunakan oleh penyandang disabilitas khususnya di Indonesia.</string>
 </resources>
