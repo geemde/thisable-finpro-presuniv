@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.gilangmarta.Thisable.databinding.FragmentTentangthisableBinding
 
 class TentangThisableFragment: Fragment() {
@@ -18,5 +19,13 @@ class TentangThisableFragment: Fragment() {
     ): View? {
         fragmentTentangthisableBinding = FragmentTentangthisableBinding.inflate(inflater,container,false)
         return fragmentTentangthisableBinding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.tbtentangThisable.setNavigationOnClickListener {
+            it.findNavController().popBackStack()
+        }
     }
 }

@@ -27,5 +27,9 @@ class ProfileFragment: Fragment() {
         binding.tbProfile.setNavigationOnClickListener {
             it.findNavController().popBackStack()
         }
+
+        binding.btnTentangThisable.setOnClickListener{
+            it.findNavController().navigate(R.id.action_profileFragment_to_tentangThisableFragment)
+        }
     }
 }
