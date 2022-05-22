@@ -10,8 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.gilangmarta.Thisable.databinding.FragmentSplashBinding
 import com.gilangmarta.Thisable.utils.ConstVal.SPLASH_DELAY_TIME
+import com.gilangmarta.Thisable.utils.SharedPrefManager
 
 class SplashFragment: Fragment() {
+    private lateinit var pref: SharedPrefManager
+
     private var fragmentSplashBinding: FragmentSplashBinding? = null  //setiap buat layout, kalo pake viewbinding akan generate...
     private val binding get() = fragmentSplashBinding!! // fungsi get untuk ngambil isi fragment
 
@@ -27,8 +30,18 @@ class SplashFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        pref = SharedPrefManager(requireContext())
+        val isLogin = pref.isLogin
+
         Handler(Looper.getMainLooper()).postDelayed({
+            when {
+                isLogin -> {
+                    findNavController().navigate(R.id.action_splashFragment_to_homepageFragment)
+                }
+                !isLogin -> {
                     findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+                }
+            }
         }, SPLASH_DELAY_TIME)
     }
 }

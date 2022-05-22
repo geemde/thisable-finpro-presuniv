@@ -10,6 +10,7 @@ object ConstVal {
     const val KEY_IS_LOGIN = "key.isLogin"
     const val KEY_EMAIL = "key.email"
     const val KEY_IS_INTRO = "key.isIntro"
+    const val KEY_PHOTO_URL = "key.photoURL"
 
     // UI Const
     const val SPLASH_DELAY_TIME = 1500L //ini dicari ya

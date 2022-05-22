@@ -22,6 +22,8 @@
             android:id="@+id/action_splashFragment_to_homepageFragment"
             app:destination="@id/homepageFragment"
             app:popUpTo="@id/thisable_navigation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
             app:launchSingleTop="true"
             app:popUpToInclusive="true"/>
     </fragment>
@@ -32,7 +34,14 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_ketentuanLayananFragment"
-            app:destination="@id/ketentuanLayananFragment" />
+            app:destination="@id/ketentuanLayananFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_loginFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
     </fragment>
     <fragment
         android:id="@+id/homepageFragment"
@@ -41,19 +50,26 @@
         tools:layout="@layout/fragment_homepage">
         <action
             android:id="@+id/action_homepageFragment_to_pendeteksiTeksFragment"
-            app:destination="@id/pendeteksiTeksFragment" />
+            app:destination="@id/pendeteksiTeksFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
         <action
             android:id="@+id/action_homepageFragment_to_pendeteksiTulisTanganFragment"
-            app:destination="@id/pendeteksiTulisTanganFragment" />
+            app:destination="@id/pendeteksiTulisTanganFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
         <action
             android:id="@+id/action_homepageFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
     </fragment>
     <fragment
         android:id="@+id/ketentuanLayananFragment"
         android:name="com.gilangmarta.Thisable.KetentuanLayananFragment"
         android:label="KetentuanLayananFragment"
-        tools:layout="@layout/fragment_ketentuanlayanan"/>
+        tools:layout="@layout/fragment_ketentuanlayanan"
+        />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.gilangmarta.Thisable.ProfileFragment"
@@ -61,10 +77,14 @@
         tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_profileFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
         <action
             android:id="@+id/action_profileFragment_to_tentangThisableFragment"
-            app:destination="@id/tentangThisableFragment" />
+            app:destination="@id/tentangThisableFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
     </fragment>
     <fragment
         android:id="@+id/pendeteksiTeksFragment"

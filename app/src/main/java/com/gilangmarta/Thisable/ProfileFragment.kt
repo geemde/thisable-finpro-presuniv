@@ -4,11 +4,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.gilangmarta.Thisable.databinding.FragmentProfileBinding
+import com.gilangmarta.Thisable.utils.ConstVal.KEY_EMAIL
+import com.gilangmarta.Thisable.utils.ConstVal.KEY_IS_LOGIN
+import com.gilangmarta.Thisable.utils.ConstVal.KEY_TOKEN
+import com.gilangmarta.Thisable.utils.ConstVal.KEY_USER_ID
+import com.gilangmarta.Thisable.utils.ConstVal.KEY_USER_NAME
+import com.gilangmarta.Thisable.utils.SharedPrefManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class ProfileFragment: Fragment() {
+    private lateinit var pref: SharedPrefManager
+    private lateinit var auth: FirebaseAuth
+
     private var fragmentProfileBinding: FragmentProfileBinding? = null
     private val binding get() = fragmentProfileBinding!!
 
@@ -24,12 +38,46 @@ class ProfileFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        pref = SharedPrefManager(requireContext())
+        auth = Firebase.auth
+
         binding.tbProfile.setNavigationOnClickListener {
             it.findNavController().popBackStack()
+        }
+
+        binding.btnLogout.setOnClickListener{
+            showLogoutDialog()
         }
 
         binding.btnTentangThisable.setOnClickListener{
             it.findNavController().navigate(R.id.action_profileFragment_to_tentangThisableFragment)
         }
+    }
+    private fun logout() {
+        auth.signOut()
+        pref.apply {
+            clearPreferenceByKey(KEY_USER_ID)
+            clearPreferenceByKey(KEY_TOKEN)
+            clearPreferenceByKey(KEY_USER_NAME)
+            clearPreferenceByKey(KEY_IS_LOGIN)
+            clearPreferenceByKey(KEY_EMAIL)
+        }
+    }
+
+    private fun showLogoutDialog() {
+        AlertDialog.Builder(requireContext()).apply {
+            setTitle(getString(R.string.message_information))
+            setMessage(getString(R.string.message_logout_confirmation))
+            setPositiveButton("OK") { _, _ ->
+                try {
+                    logout()
+                } finally {
+                    findNavController().navigate(R.id.action_profileFragment_to_loginFragment)
+                }
+            }
+            setNegativeButton("Batal") { p0, _ ->
+                p0.dismiss()
+            }
+        }.create().show()
     }
 }
