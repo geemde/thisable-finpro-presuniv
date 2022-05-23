@@ -7,7 +7,7 @@
     <string name="action_lanjut">Lanjut</string>
     <string name="action_finish">Selesai</string>
     <string name="label_name">Gilang Martadinata</string>
-    <string name="label_welcome">Selamat Datang, \nGilang Martadinata!</string>
+    <string name="label_welcome">Selamat Datang!</string>
     <string name="label_feature">Fitur</string>
     <string name="ketentuan_layanan"><u>Ketentuan Layanan</u></string>
     <string name="label_pendeteksi_teks">Pendeteksi Teks</string>

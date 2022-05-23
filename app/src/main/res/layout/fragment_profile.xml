@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:text="@string/label_name"
         android:layout_marginTop="@dimen/dimen_16dp"
+        android:textAlignment="center"
         style="@style/TextContent.Header"
         app:layout_constraintEnd_toEndOf="@+id/imgProfilePage"
         app:layout_constraintStart_toStartOf="@+id/imgProfilePage"

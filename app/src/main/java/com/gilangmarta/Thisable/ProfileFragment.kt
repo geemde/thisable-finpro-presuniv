@@ -11,10 +11,12 @@ import androidx.navigation.fragment.findNavController
 import com.gilangmarta.Thisable.databinding.FragmentProfileBinding
 import com.gilangmarta.Thisable.utils.ConstVal.KEY_EMAIL
 import com.gilangmarta.Thisable.utils.ConstVal.KEY_IS_LOGIN
+import com.gilangmarta.Thisable.utils.ConstVal.KEY_PHOTO_URL
 import com.gilangmarta.Thisable.utils.ConstVal.KEY_TOKEN
 import com.gilangmarta.Thisable.utils.ConstVal.KEY_USER_ID
 import com.gilangmarta.Thisable.utils.ConstVal.KEY_USER_NAME
 import com.gilangmarta.Thisable.utils.SharedPrefManager
+import com.gilangmarta.Thisable.utils.setImageUrl
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -41,6 +43,10 @@ class ProfileFragment: Fragment() {
         pref = SharedPrefManager(requireContext())
         auth = Firebase.auth
 
+        binding.tvFullName.text = pref.getUserName
+        binding.tvFullEmail.text = pref.getEmail
+        binding.imgProfilePage.setImageUrl(pref.getPhotoUrl!!)
+
         binding.tbProfile.setNavigationOnClickListener {
             it.findNavController().popBackStack()
         }
@@ -61,6 +67,7 @@ class ProfileFragment: Fragment() {
             clearPreferenceByKey(KEY_USER_NAME)
             clearPreferenceByKey(KEY_IS_LOGIN)
             clearPreferenceByKey(KEY_EMAIL)
+            clearPreferenceByKey(KEY_PHOTO_URL)
         }
     }
 

@@ -28,4 +28,7 @@ class PendeteksiTeksFragment: Fragment() {
             it.findNavController().popBackStack()
         }
     }
+
+
+
 }

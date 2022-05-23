@@ -101,6 +101,7 @@ class LoginFragment: Fragment() {
                     // Sign in success, update UI with the signed-in user's information
                     Timber.d("signInWithCredential:success")
                     val user = auth.currentUser
+                    Toast.makeText(context, "Selamat datang di Thisable!", Toast.LENGTH_SHORT).show()
                     pref.apply {
                         setStringPreference(KEY_USER_NAME, user?.displayName.toString())
                         setStringPreference(KEY_EMAIL, user?.email.toString())
