@@ -23,7 +23,10 @@ class TentangThisableFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initAction()
+    }
 
+    private fun initAction() {
         binding.tbtentangThisable.setNavigationOnClickListener {
             it.findNavController().popBackStack()
         }

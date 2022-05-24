@@ -57,16 +57,19 @@ class LoginFragment: Fragment() {
             .build()
 
         oneTapClient = GoogleSignIn.getClient(requireActivity(), gso)
-
         auth = Firebase.auth
+        initAction()
 
-        // digunain kalo trigger button to page, binding button taro paling bawah
-        binding.tvKetentuanLayanan.setOnClickListener{
-            it.findNavController().navigate(R.id.action_loginFragment_to_ketentuanLayananFragment)
-        }
+    }
 
+    private fun initAction() {
+        //button sign in with google
         binding.btnLoginGoogle.setOnClickListener{
             signIn()
+        }
+        //button ketentuan layanan
+        binding.tvKetentuanLayanan.setOnClickListener{
+            it.findNavController().navigate(R.id.action_loginFragment_to_ketentuanLayananFragment)
         }
     }
 

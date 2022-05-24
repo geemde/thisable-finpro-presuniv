@@ -24,7 +24,11 @@ class KetentuanLayananFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //ini code untuk kembali (toolbar)
+        initAction()
+    }
+
+    private fun initAction() {
+        //tombol back
         binding.tbKetentuanLayanan.setNavigationOnClickListener {
             it.findNavController().popBackStack()
         }

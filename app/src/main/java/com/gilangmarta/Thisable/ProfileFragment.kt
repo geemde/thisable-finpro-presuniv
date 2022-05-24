@@ -17,6 +17,9 @@ import com.gilangmarta.Thisable.utils.ConstVal.KEY_USER_ID
 import com.gilangmarta.Thisable.utils.ConstVal.KEY_USER_NAME
 import com.gilangmarta.Thisable.utils.SharedPrefManager
 import com.gilangmarta.Thisable.utils.setImageUrl
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -24,6 +27,7 @@ import com.google.firebase.ktx.Firebase
 class ProfileFragment: Fragment() {
     private lateinit var pref: SharedPrefManager
     private lateinit var auth: FirebaseAuth
+    private lateinit var mGoogleSignInClient: GoogleSignInClient
 
     private var fragmentProfileBinding: FragmentProfileBinding? = null
     private val binding get() = fragmentProfileBinding!!
@@ -43,10 +47,22 @@ class ProfileFragment: Fragment() {
         pref = SharedPrefManager(requireContext())
         auth = Firebase.auth
 
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+        mGoogleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
+
+        initUI()
+        initAction()
+    }
+
+    private fun initUI() {
         binding.tvFullName.text = pref.getUserName
         binding.tvFullEmail.text = pref.getEmail
         binding.imgProfilePage.setImageUrl(pref.getPhotoUrl!!)
+    }
 
+    private fun initAction() {
         binding.tbProfile.setNavigationOnClickListener {
             it.findNavController().popBackStack()
         }
@@ -61,13 +77,15 @@ class ProfileFragment: Fragment() {
     }
     private fun logout() {
         auth.signOut()
-        pref.apply {
-            clearPreferenceByKey(KEY_USER_ID)
-            clearPreferenceByKey(KEY_TOKEN)
-            clearPreferenceByKey(KEY_USER_NAME)
-            clearPreferenceByKey(KEY_IS_LOGIN)
-            clearPreferenceByKey(KEY_EMAIL)
-            clearPreferenceByKey(KEY_PHOTO_URL)
+        mGoogleSignInClient.signOut().addOnCompleteListener {
+            pref.apply {
+                clearPreferenceByKey(KEY_USER_ID)
+                clearPreferenceByKey(KEY_TOKEN)
+                clearPreferenceByKey(KEY_USER_NAME)
+                clearPreferenceByKey(KEY_IS_LOGIN)
+                clearPreferenceByKey(KEY_EMAIL)
+                clearPreferenceByKey(KEY_PHOTO_URL)
+            }
         }
     }
 

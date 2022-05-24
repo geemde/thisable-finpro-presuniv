@@ -97,7 +97,8 @@
         android:id="@+id/pendeteksiTeksFragment"
         android:name="com.gilangmarta.Thisable.PendeteksiTeksFragment"
         android:label="PendeteksiTeksFragment"
-        tools:layout="@layout/fragment_pendeteksiteks"/>
+        tools:layout="@layout/fragment_pendeteksiteks">
+    </fragment>
     <fragment
         android:id="@+id/pendeteksiTulisTanganFragment"
         android:name="com.gilangmarta.Thisable.PendeteksiTulisTanganFragment"

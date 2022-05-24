@@ -8,14 +8,17 @@
         <entry key="app/src/main/res/drawable/bg_google_button.xml" value="0.39" />
         <entry key="app/src/main/res/drawable/ic_fqa.xml" value="0.29" />
         <entry key="app/src/main/res/drawable/ic_help.xml" value="0.29" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.316" />
         <entry key="app/src/main/res/drawable/ic_people_illustration_1.xml" value="0.39" />
         <entry key="app/src/main/res/drawable/ic_people_illustration_2.xml" value="0.39" />
         <entry key="app/src/main/res/drawable/ic_text_detection.xml" value="0.29" />
         <entry key="app/src/main/res/drawable/ic_thisable.xml" value="0.39" />
         <entry key="app/src/main/res/drawable/ic_tulistangan.xml" value="0.29" />
         <entry key="app/src/main/res/font/nunito_sans_bold.xml" value="0.24791666666666667" />
+        <entry key="app/src/main/res/layout/activity_camera.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.34782608695652173" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.34739583333333335" />
+        <entry key="app/src/main/res/layout/fragment_camera.xml" value="0.40260416666666665" />
         <entry key="app/src/main/res/layout/fragment_homepage.xml" value="0.44641876220703125" />
         <entry key="app/src/main/res/layout/fragment_ketentuanlayanan.xml" value="0.2427536231884058" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.33" />
