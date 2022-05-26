@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.gilangmarta.Thisable.SplashFragment"
+        android:name="com.gilangmarta.thisable.SplashFragment"
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.gilangmarta.Thisable.LoginFragment"
+        android:name="com.gilangmarta.thisable.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/homepageFragment"
-        android:name="com.gilangmarta.Thisable.HomepageFragment"
+        android:name="com.gilangmarta.thisable.HomepageFragment"
         android:label="HomepageFragment"
         tools:layout="@layout/fragment_homepage">
         <action
@@ -69,13 +69,13 @@
     </fragment>
     <fragment
         android:id="@+id/ketentuanLayananFragment"
-        android:name="com.gilangmarta.Thisable.KetentuanLayananFragment"
+        android:name="com.gilangmarta.thisable.KetentuanLayananFragment"
         android:label="KetentuanLayananFragment"
         tools:layout="@layout/fragment_ketentuanlayanan"
         />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.gilangmarta.Thisable.ProfileFragment"
+        android:name="com.gilangmarta.thisable.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile">
         <action
@@ -95,18 +95,18 @@
     </fragment>
     <fragment
         android:id="@+id/pendeteksiTeksFragment"
-        android:name="com.gilangmarta.Thisable.PendeteksiTeksFragment"
+        android:name="com.gilangmarta.thisable.PendeteksiTeksFragment"
         android:label="PendeteksiTeksFragment"
         tools:layout="@layout/fragment_pendeteksiteks">
     </fragment>
     <fragment
         android:id="@+id/pendeteksiTulisTanganFragment"
-        android:name="com.gilangmarta.Thisable.PendeteksiTulisTanganFragment"
+        android:name="com.gilangmarta.thisable.PendeteksiTulisTanganFragment"
         android:label="PendeteksiTulisTanganFragment"
         tools:layout="@layout/fragment_pendeteksitulistangan"/>
     <fragment
         android:id="@+id/tentangThisableFragment"
-        android:name="com.gilangmarta.Thisable.TentangThisableFragment"
+        android:name="com.gilangmarta.thisable.TentangThisableFragment"
         android:label="TentangThisableFragment"
         tools:layout="@layout/fragment_tentangthisable"/>
 
