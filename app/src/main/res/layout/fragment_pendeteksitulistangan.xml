@@ -17,7 +17,7 @@
 
     <ImageView
         android:id="@+id/imgTulisTanganInput"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="400dp"
         android:layout_margin="@dimen/dimen_16dp"
         app:srcCompat="@drawable/ic_baseline_camera_alt_24"

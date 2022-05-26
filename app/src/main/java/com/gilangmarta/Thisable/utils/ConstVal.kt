@@ -21,4 +21,6 @@ object ConstVal {
     const val KEY_PICTURE = "picture"
     const val KEY_IS_BACK_CAMERA = "isBackCamera"
 
+    const val BASE_URL = "https://vision.googleapis.com/v1/"
+
 }

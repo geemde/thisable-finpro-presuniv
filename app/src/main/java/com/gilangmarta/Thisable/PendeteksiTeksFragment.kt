@@ -2,6 +2,7 @@ package com.gilangmarta.Thisable
 
 import android.Manifest
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.provider.MediaStore
@@ -57,16 +58,34 @@ class PendeteksiTeksFragment: Fragment() {
     private val launchIntentCamera = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
-        if (it.resultCode == ConstVal.CAMERA_X_RESULT) {
-            val file = it?.data?.getSerializableExtra(ConstVal.KEY_PICTURE) as File
-            // yang dikirim ke API input file
-            inputFile = file
-            val result = rotateBitmap(BitmapFactory.decodeFile(file.path))
+        val file = it?.data?.getSerializableExtra(ConstVal.KEY_PICTURE) as File
+        val result = rotateBitmap(BitmapFactory.decodeFile(file.path))
 
+        if (it.resultCode == ConstVal.CAMERA_X_RESULT) {
             binding.imgTeksInput.setImageBitmap(result)
             binding.btnTeksAmbilFoto.text = "Deteksi Ulang"
             binding.tvTeksTerdeteksi.text = "Teks terdeteksi:"
         }
+    }
+
+    private fun scaleBitmapDown(bitmap: Bitmap, maxDimension: Int): Bitmap {
+        val originalWidth = bitmap.width
+        val originalHeight = bitmap.height
+        var resizedWidth = maxDimension
+        var resizedHeight = maxDimension
+        if (originalHeight > originalWidth) {
+            resizedHeight = maxDimension
+            resizedWidth =
+                (resizedHeight * originalWidth.toFloat() / originalHeight.toFloat()).toInt()
+        } else if (originalWidth > originalHeight) {
+            resizedWidth = maxDimension
+            resizedHeight =
+                (resizedWidth * originalHeight.toFloat() / originalWidth.toFloat()).toInt()
+        } else if (originalHeight == originalWidth) {
+            resizedHeight = maxDimension
+            resizedWidth = maxDimension
+        }
+        return Bitmap.createScaledBitmap(bitmap, resizedWidth, resizedHeight, false)
     }
 
 
