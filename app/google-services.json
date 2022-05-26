@@ -7,12 +7,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:581624492106:android:038c270c8d549abd0e76b3",
+        "mobilesdk_app_id": "1:581624492106:android:7d32b9a2e10923bc0e76b3",
         "android_client_info": {
-          "package_name": "com.gilangmarta.Thisable"
+          "package_name": "com.gilangmarta.thisable"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "581624492106-af02dkqmab8p10rfa3ct6k4outspvsni.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gilangmarta.thisable",
+            "certificate_hash": "6c6793d1f84dbfa42db52ae6d5de424c53736af6"
+          }
+        },
         {
           "client_id": "581624492106-dskuu0pqlausmtn911fb59mjlsrab6u3.apps.googleusercontent.com",
           "client_type": 3
@@ -20,7 +28,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDzHRmwdMzJjKJ2Qr3Okd3sRiybF2ogdc0"
+          "current_key": "AIzaSyDhPlDulclPA_ZDA-ZFBJUF3KF4QNoW79o"
         }
       ],
       "services": {
