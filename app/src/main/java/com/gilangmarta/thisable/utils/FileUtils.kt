@@ -3,17 +3,11 @@ package com.gilangmarta.thisable.utils
 import android.app.Application
 import android.content.ClipData
 import android.content.ClipboardManager
-import android.content.ContentResolver
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Matrix
-import android.net.Uri
-import android.os.Environment
 import com.gilangmarta.thisable.R
-import timber.log.Timber
-import java.io.*
-import java.net.URL
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 

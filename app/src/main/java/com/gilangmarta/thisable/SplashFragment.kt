@@ -17,7 +17,6 @@ class SplashFragment : Fragment() {
 
     private var fragmentSplashBinding: FragmentSplashBinding? =
         null  //setiap buat layout, kalo pake viewbinding akan generate...
-    private val binding get() = fragmentSplashBinding!! // fungsi get untuk ngambil isi fragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
