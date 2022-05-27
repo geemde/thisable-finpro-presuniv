@@ -10,7 +10,7 @@ import com.gilangmarta.thisable.databinding.FragmentHomepageBinding
 import com.gilangmarta.thisable.utils.SharedPrefManager
 import com.gilangmarta.thisable.utils.setImageUrl
 
-class HomepageFragment: Fragment() {
+class HomepageFragment : Fragment() {
 
     private lateinit var pref: SharedPrefManager
 
@@ -22,7 +22,7 @@ class HomepageFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        fragmentHomepageBinding = FragmentHomepageBinding.inflate(inflater,container,false)
+        fragmentHomepageBinding = FragmentHomepageBinding.inflate(inflater, container, false)
         return fragmentHomepageBinding?.root
     }
 
@@ -45,12 +45,14 @@ class HomepageFragment: Fragment() {
             it.findNavController().navigate(R.id.action_homepageFragment_to_profileFragment)
         }
         //button pendeteksi teks
-        binding.btnPendeteksiTeks.setOnClickListener{
-            it.findNavController().navigate((R.id.action_homepageFragment_to_pendeteksiTeksFragment))
+        binding.btnPendeteksiTeks.setOnClickListener {
+            it.findNavController()
+                .navigate((R.id.action_homepageFragment_to_pendeteksiTeksFragment))
         }
         //button pendeteksi tulis tangan
-        binding.btnPendeteksiTulisTangan.setOnClickListener{
-            it.findNavController().navigate((R.id.action_homepageFragment_to_pendeteksiTulisTanganFragment))
+        binding.btnPendeteksiTulisTangan.setOnClickListener {
+            it.findNavController()
+                .navigate((R.id.action_homepageFragment_to_pendeteksiTulisTanganFragment))
         }
     }
 

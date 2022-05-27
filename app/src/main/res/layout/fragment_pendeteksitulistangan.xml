@@ -1,66 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <Toolbar
         android:id="@+id/tb_pendeteksiTulisTangan"
-        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:navigationIcon="@drawable/ic_baseline_chevron_left_24"
         android:title="@string/label_pendeteksiTulisTangan"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imgTulisTanganInput"
-        android:layout_width="wrap_content"
-        android:layout_height="400dp"
-        android:layout_margin="@dimen/dimen_16dp"
-        app:srcCompat="@drawable/ic_baseline_camera_alt_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tb_pendeteksiTulisTangan"
-        />
-
-    <TextView
-        android:id="@+id/tvTulisTanganTerdeteksi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/label_teksTerdeteksi"
-        app:layout_constraintTop_toBottomOf="@id/imgTulisTanganInput"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="25dp"
-        style="@style/TextContent.SmallBold"
-        />
-
-    <TextView
-        android:id="@+id/tvHasilPendeteksiTulisTangan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/label_hasilTulisTanganTerdeteksi"
-        app:layout_constraintTop_toBottomOf="@+id/tvTulisTanganTerdeteksi"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="@dimen/dimen_20dp"
-        />
-
-    <Button
-        android:id="@+id/btnTulisTanganAmbilFoto"
-        style="@style/ButtonContent"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_40dp"
-        android:layout_marginHorizontal="@dimen/dimen_16dp"
-        android:background="@drawable/bg_button"
-        android:text="@string/label_ambilFoto"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@+id/tvHasilPendeteksiTulisTangan" />
+        android:layout_height="1000dp"
+        app:layout_constraintTop_toBottomOf="@id/tb_pendeteksiTulisTangan">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgTulisTanganInput"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
+
+            <TextView
+                android:id="@+id/tvTulisTanganTerdeteksi"
+                style="@style/TextContent.SmallBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="@string/label_teksTerdeteksi"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgTulisTanganInput" />
+
+            <TextView
+                android:id="@+id/tvHasilPendeteksiTulisTangan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:text="@string/label_hasilTulisTanganTerdeteksi"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTulisTanganTerdeteksi" />
+
+            <Button
+                android:id="@+id/btnTulisTanganAmbilFoto"
+                style="@style/ButtonContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_16dp"
+                android:layout_marginTop="@dimen/dimen_40dp"
+                android:background="@drawable/bg_button"
+                android:text="@string/label_ambilFoto"
+                android:textAllCaps="false"
+                app:layout_constraintTop_toBottomOf="@+id/tvHasilPendeteksiTulisTangan" />
+
+            <Button
+                android:id="@+id/btnDetectTulisTangan"
+                style="@style/ButtonContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_16dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:layout_marginBottom="300dp"
+                android:background="@drawable/bg_button"
+                android:text="@string/label_detect"
+                android:textAllCaps="false"
+                app:layout_constraintTop_toBottomOf="@+id/btnTulisTanganAmbilFoto" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

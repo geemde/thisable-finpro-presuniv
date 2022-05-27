@@ -12,10 +12,11 @@ import com.gilangmarta.thisable.databinding.FragmentSplashBinding
 import com.gilangmarta.thisable.utils.ConstVal.SPLASH_DELAY_TIME
 import com.gilangmarta.thisable.utils.SharedPrefManager
 
-class SplashFragment: Fragment() {
+class SplashFragment : Fragment() {
     private lateinit var pref: SharedPrefManager
 
-    private var fragmentSplashBinding: FragmentSplashBinding? = null  //setiap buat layout, kalo pake viewbinding akan generate...
+    private var fragmentSplashBinding: FragmentSplashBinding? =
+        null  //setiap buat layout, kalo pake viewbinding akan generate...
     private val binding get() = fragmentSplashBinding!! // fungsi get untuk ngambil isi fragment
 
     override fun onCreateView(
@@ -23,7 +24,11 @@ class SplashFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        fragmentSplashBinding = FragmentSplashBinding.inflate(inflater,container,false) //udah create view, tinggal return
+        fragmentSplashBinding = FragmentSplashBinding.inflate(
+            inflater,
+            container,
+            false
+        ) //udah create view, tinggal return
         return fragmentSplashBinding?.root //return
     }
 

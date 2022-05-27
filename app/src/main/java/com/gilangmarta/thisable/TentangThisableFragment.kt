@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.gilangmarta.thisable.databinding.FragmentTentangthisableBinding
 
-class TentangThisableFragment: Fragment() {
+class TentangThisableFragment : Fragment() {
     private var fragmentTentangthisableBinding: FragmentTentangthisableBinding? = null
     private val binding get() = fragmentTentangthisableBinding!!
 
@@ -17,7 +17,8 @@ class TentangThisableFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        fragmentTentangthisableBinding = FragmentTentangthisableBinding.inflate(inflater,container,false)
+        fragmentTentangthisableBinding =
+            FragmentTentangthisableBinding.inflate(inflater, container, false)
         return fragmentTentangthisableBinding?.root
     }
 

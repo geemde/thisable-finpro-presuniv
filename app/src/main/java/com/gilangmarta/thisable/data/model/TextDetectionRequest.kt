@@ -1,7 +1,7 @@
 package com.gilangmarta.thisable.data.model
 
 data class TextDetectionRequest(
-    val request: TextDetectionRequestItem
+    val requests: List<TextDetectionRequestItem>
 )
 
 data class TextDetectionRequestItem(
@@ -10,11 +10,7 @@ data class TextDetectionRequestItem(
 )
 
 data class ImageItem(
-    val source: SourceItem
-)
-
-data class SourceItem(
-    val imageUri: String
+    val content: String,
 )
 
 data class FeatureItem(

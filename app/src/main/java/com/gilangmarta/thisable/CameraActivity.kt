@@ -69,11 +69,14 @@ class CameraActivity : AppCompatActivity() {
         imageCapture.takePicture(
             outputOption,
             ContextCompat.getMainExecutor(this),
-            object: ImageCapture.OnImageSavedCallback {
+            object : ImageCapture.OnImageSavedCallback {
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
                     val intent = Intent()
                     intent.putExtra(KEY_PICTURE, photoFile)
-                    intent.putExtra(KEY_IS_BACK_CAMERA, cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA)
+                    intent.putExtra(
+                        KEY_IS_BACK_CAMERA,
+                        cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA
+                    )
                     setResult(CAMERA_X_RESULT, intent)
                     finish()
                 }

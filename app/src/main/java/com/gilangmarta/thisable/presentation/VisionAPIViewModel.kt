@@ -13,8 +13,12 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class VisionAPIViewModel @Inject constructor(private val repository: VisionApiRepository): ViewModel() {
-    fun textDetection(apiKey: String, textDetectionRequest: TextDetectionRequest) : LiveData<APIResponse<TextDetectionResponse>> {
+class VisionAPIViewModel @Inject constructor(private val repository: VisionApiRepository) :
+    ViewModel() {
+    fun textDetection(
+        apiKey: String,
+        textDetectionRequest: TextDetectionRequest
+    ): LiveData<APIResponse<TextDetectionResponse>> {
         val response = MutableLiveData<APIResponse<TextDetectionResponse>>()
         viewModelScope.launch {
             repository.textDetection(apiKey, textDetectionRequest).collect {

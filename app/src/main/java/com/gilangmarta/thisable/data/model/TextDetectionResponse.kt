@@ -8,11 +8,20 @@ data class TextDetectionResponse(
 )
 
 data class ResponseItem(
-    @SerializedName("fulLTextAnnotation")
-    var fullTextAnnotation: FulLTextAnnotationItem
+    @SerializedName("fullTextAnnotation")
+    var fullTextAnnotation: fullTextAnnotationItem,
+    @SerializedName("error")
+    val error: ErrorItem
 )
 
-data class FulLTextAnnotationItem(
+data class fullTextAnnotationItem(
     @SerializedName("text")
     var text: String
+)
+
+data class ErrorItem(
+    @SerializedName("code")
+    var code: Int,
+    @SerializedName("message")
+    var message: String
 )

@@ -1,6 +1,8 @@
 package com.gilangmarta.thisable.utils
 
 import android.app.Application
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.ContentResolver
 import android.content.Context
 import android.graphics.Bitmap
@@ -21,25 +23,6 @@ val timeStamp: String = SimpleDateFormat(
     FILENAME_FORMAT,
     Locale.US
 ).format(System.currentTimeMillis())
-
-fun createTempFile(context: Context): File {
-    val storageDir: File? = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-    return File.createTempFile(timeStamp, ".jpg", storageDir)
-}
-
-fun urlToBitmap(src: String): Bitmap? {
-    return try {
-        val url = URL(src)
-        val connection = url.openConnection()
-        connection.doInput = true
-        connection.connect()
-        val input = connection.getInputStream()
-        BitmapFactory.decodeStream(input)
-    } catch (ex: Exception) {
-        Timber.e(ex.message.toString())
-        null
-    }
-}
 
 fun createFile(application: Application): File {
     val mediaDir = application.externalMediaDirs.firstOrNull()?.let {
@@ -67,32 +50,30 @@ fun rotateBitmap(bitmap: Bitmap, isBackCamera: Boolean = false): Bitmap {
     )
 }
 
-fun uriToFile(selectedImg: Uri, context: Context): File {
-    val contentResolver: ContentResolver = context.contentResolver
-    val myFile = createTempFile(context)
-
-    val inputStream = contentResolver.openInputStream(selectedImg) as InputStream
-    val outputStream: OutputStream = FileOutputStream(myFile)
-    val buf = ByteArray(1024)
-    var len: Int
-    while (inputStream.read(buf).also { len = it } > 0) outputStream.write(buf, 0, len)
-    outputStream.close()
-    inputStream.close()
-
-    return myFile
+fun scaleBitmapDown(bitmap: Bitmap, maxDimension: Int): Bitmap {
+    val originalWidth = bitmap.width
+    val originalHeight = bitmap.height
+    var resizedWidth = maxDimension
+    var resizedHeight = maxDimension
+    if (originalHeight > originalWidth) {
+        resizedHeight = maxDimension
+        resizedWidth =
+            (resizedHeight * originalWidth.toFloat() / originalHeight.toFloat()).toInt()
+    } else if (originalWidth > originalHeight) {
+        resizedWidth = maxDimension
+        resizedHeight =
+            (resizedWidth * originalHeight.toFloat() / originalWidth.toFloat()).toInt()
+    } else if (originalHeight == originalWidth) {
+        resizedHeight = maxDimension
+        resizedWidth = maxDimension
+    }
+    return Bitmap.createScaledBitmap(bitmap, resizedWidth, resizedHeight, false)
 }
 
-fun reduceFileImage(file: File): File {
-    val bitmap = BitmapFactory.decodeFile(file.path)
-    var compressQuality = 100
-    var streamLength: Int
-    do {
-        val bmpStream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, bmpStream)
-        val bmpPicByteArray = bmpStream.toByteArray()
-        streamLength = bmpPicByteArray.size
-        compressQuality -= 5
-    } while (streamLength > 1000000)
-    bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, FileOutputStream(file))
-    return file
+fun copyToClipboard(context: Context?, text: String) {
+    val myClipboard: ClipboardManager =
+        context?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+    val myClip: ClipData = ClipData.newPlainText("textDetectionResult", text)
+
+    myClipboard.setPrimaryClip(myClip)
 }

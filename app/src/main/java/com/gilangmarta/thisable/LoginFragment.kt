@@ -26,7 +26,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import timber.log.Timber
 
-class LoginFragment: Fragment() {
+class LoginFragment : Fragment() {
 
     private lateinit var pref: SharedPrefManager
     private lateinit var oneTapClient: GoogleSignInClient
@@ -40,7 +40,7 @@ class LoginFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        fragmentLoginBinding = FragmentLoginBinding.inflate(inflater,container,false)
+        fragmentLoginBinding = FragmentLoginBinding.inflate(inflater, container, false)
         return fragmentLoginBinding?.root
     }
 
@@ -63,11 +63,11 @@ class LoginFragment: Fragment() {
 
     private fun initAction() {
         //button sign in with google
-        binding.btnLoginGoogle.setOnClickListener{
+        binding.btnLoginGoogle.setOnClickListener {
             signIn()
         }
         //button ketentuan layanan
-        binding.tvKetentuanLayanan.setOnClickListener{
+        binding.tvKetentuanLayanan.setOnClickListener {
             it.findNavController().navigate(R.id.action_loginFragment_to_ketentuanLayananFragment)
         }
     }
@@ -103,7 +103,8 @@ class LoginFragment: Fragment() {
                     // Sign in success, update UI with the signed-in user's information
                     Timber.d("signInWithCredential:success")
                     val user = auth.currentUser
-                    Toast.makeText(context, "Selamat datang di Thisable!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Selamat datang di Thisable!", Toast.LENGTH_SHORT)
+                        .show()
                     pref.apply {
                         setStringPreference(KEY_USER_NAME, user?.displayName.toString())
                         setStringPreference(KEY_EMAIL, user?.email.toString())

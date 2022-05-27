@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.gilangmarta.thisable.databinding.FragmentKetentuanlayananBinding
 
-class KetentuanLayananFragment: Fragment() {
+class KetentuanLayananFragment : Fragment() {
     private var fragmentKetentuanlayananBinding: FragmentKetentuanlayananBinding? = null
     private val binding get() = fragmentKetentuanlayananBinding!!
 
@@ -17,7 +17,8 @@ class KetentuanLayananFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        fragmentKetentuanlayananBinding = FragmentKetentuanlayananBinding.inflate(inflater,container, false)
+        fragmentKetentuanlayananBinding =
+            FragmentKetentuanlayananBinding.inflate(inflater, container, false)
         return fragmentKetentuanlayananBinding?.root
     }
 

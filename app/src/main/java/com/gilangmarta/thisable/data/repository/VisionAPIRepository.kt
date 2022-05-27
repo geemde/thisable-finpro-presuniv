@@ -13,7 +13,10 @@ import javax.inject.Singleton
 @Singleton
 class VisionApiRepository @Inject constructor(private val dataSource: VisionApiDataSource) {
 
-    suspend fun textDetection(apiKey: String, textDetectionRequest: TextDetectionRequest): Flow<APIResponse<TextDetectionResponse>> {
+    suspend fun textDetection(
+        apiKey: String,
+        textDetectionRequest: TextDetectionRequest
+    ): Flow<APIResponse<TextDetectionResponse>> {
         return dataSource.textDetection(apiKey, textDetectionRequest).flowOn(Dispatchers.IO)
     }
 

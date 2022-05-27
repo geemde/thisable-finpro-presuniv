@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class ProfileFragment: Fragment() {
+class ProfileFragment : Fragment() {
     private lateinit var pref: SharedPrefManager
     private lateinit var auth: FirebaseAuth
     private lateinit var mGoogleSignInClient: GoogleSignInClient
@@ -37,7 +37,7 @@ class ProfileFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        fragmentProfileBinding = FragmentProfileBinding.inflate(inflater,container,false)
+        fragmentProfileBinding = FragmentProfileBinding.inflate(inflater, container, false)
         return fragmentProfileBinding?.root
     }
 
@@ -67,14 +67,15 @@ class ProfileFragment: Fragment() {
             it.findNavController().popBackStack()
         }
 
-        binding.btnLogout.setOnClickListener{
+        binding.btnLogout.setOnClickListener {
             showLogoutDialog()
         }
 
-        binding.btnTentangThisable.setOnClickListener{
+        binding.btnTentangThisable.setOnClickListener {
             it.findNavController().navigate(R.id.action_profileFragment_to_tentangThisableFragment)
         }
     }
+
     private fun logout() {
         auth.signOut()
         mGoogleSignInClient.signOut().addOnCompleteListener {

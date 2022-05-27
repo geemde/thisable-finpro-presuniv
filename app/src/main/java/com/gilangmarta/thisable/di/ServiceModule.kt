@@ -11,6 +11,7 @@ import retrofit2.Retrofit
 @InstallIn(SingletonComponent::class)
 class ServiceModule {
     @Provides
-    fun provideGoogleVisionAPIService(retrofit: Retrofit):VisionAPIService = retrofit.create(VisionAPIService::class.java)
+    fun provideGoogleVisionAPIService(retrofit: Retrofit): VisionAPIService =
+        retrofit.create(VisionAPIService::class.java)
 
 }

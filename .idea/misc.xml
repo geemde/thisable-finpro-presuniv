@@ -22,8 +22,8 @@
         <entry key="app/src/main/res/layout/fragment_homepage.xml" value="0.44641876220703125" />
         <entry key="app/src/main/res/layout/fragment_ketentuanlayanan.xml" value="0.2427536231884058" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_pendeteksiteks.xml" value="0.34782608695652173" />
-        <entry key="app/src/main/res/layout/fragment_pendeteksitulistangan.xml" value="0.34782608695652173" />
+        <entry key="app/src/main/res/layout/fragment_pendeteksiteks.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_pendeteksitulistangan.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.4203190679135533" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.34782608695652173" />
         <entry key="app/src/main/res/layout/fragment_tentangthisable.xml" value="0.25" />

@@ -30,4 +30,5 @@
     <string name="label_ambilFoto">Ambil Foto</string>
     <string name="message_failed_take_picture">Gagal ambil gambar.</string>
     <string name="message_not_permitted">Izin ditolak!</string>
+    <string name="label_detect">Deteksi Teks</string>
 </resources>
